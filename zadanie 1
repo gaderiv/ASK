@@ -1,0 +1,47 @@
+.data
+info1:    .asciiz    "Podaj liczbe: "
+info2:    .asciiz    "7*(a+b)+2*b+c=  "
+.text
+la $a0, info1	# load address
+li $v0, 4	 # drukuj str
+syscall
+	li $v0, 5 	# odczyt int & zapisz w $v0
+	syscall
+	move $t0, $v0 	# zapis w t0   
+	
+la $a0, info1	# load address
+li $v0, 4	# drukuj str
+syscall
+	li $v0, 5	# odczyt int & zapisz w $v0
+	syscall
+	move $t1, $v0 	 # zapis w t1   
+	
+la $a0, info1	# load address
+li $v0, 4	# drukuj str
+syscall
+	li $v0, 5	# odczyt int & zapisz w $v0
+	syscall
+	move $t2, $v0	 # zapis w t2   
+
+li $a1, 7
+li $a2, 2
+
+add $t3, $t0, $t1	#add (a+b)
+mult $a1, $t3		
+mflo $t4		#7*(a+b)
+mult $a2, $t1		
+mflo $t5		#2*b
+add $t6, $t4, $t5	#7*(a+b)+2*b
+add $t7, $t6, $t3
+
+li $v0, 4
+la $a0, info2
+syscall
+
+li $v0,1
+move $a0,$t7
+syscall
+
+li $v0,10
+syscall
+
