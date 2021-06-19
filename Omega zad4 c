@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]){
+	int a,b,c,d;
+	printf("podaj liczbe:" );
+	scanf("%d", &a);
+	printf("podaj liczbe:" );
+	scanf("%d", &b);
+	printf("podaj liczbe:" );
+	scanf("%d", &c);
+	d=7*(a+b)+2*b+c;
+	printf("wynik dzialania 7*(a+b)+2*b+c to: ");
+	printf("%d", d);
+	return 0;
+}
