@@ -1,0 +1,2 @@
+#!/bin/ash
+as zad4.asm -o zad4.o && ld zad4.o -o zad4 && rm zad4.o && ./zad4
